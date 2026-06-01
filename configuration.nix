@@ -31,6 +31,7 @@
 	kitty
 	git
 	librewolf
+    openssh
   ];
 
 system.stateVersion = "26.05"; 
@@ -52,4 +53,3 @@ services.xserver.windowManager.i3 = {
 };
 services.displayManager.ly.enable = true;
 }
-
