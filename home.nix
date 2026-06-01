@@ -33,16 +33,16 @@ xsession = {
 	windowManager.i3 = {
 		enable = true;
 		config = {
-			modifier = "Mod4";
+			modifier = "Mod1";
 			bars = [{
 				command = "${pkgs.i3status}/bin/i3status";
 			}];
 			keybindings = {
-				"Mod4+Return" = "exec kitty";
-				"Mod4+d" = "exec dmenu_run";
-				"Mod4+Shift+q" = "kill";
-				"Mod4+1" = "workspace 1";
-				"Mod4+2" = "workspace 2";
+				"Mod1+Return" = "exec kitty";
+				"Mod1+d" = "exec dmenu_run";
+				"Mod1+Shift+q" = "kill";
+				"Mod1+1" = "workspace 1";
+				"Mod1+2" = "workspace 2";
 			};
 		};
 	};
