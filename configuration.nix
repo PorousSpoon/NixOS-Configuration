@@ -48,8 +48,11 @@ services.xserver.windowManager.i3 = {
 	package = pkgs.i3;
 	extraPackages = with pkgs; [
 		dmenu
-		i3status
+        i3status-rust
 	];
 };
 services.displayManager.ly.enable = true;
+fonts.packages  = [
+  pkgs.jetbrains-mono
+];
 }
