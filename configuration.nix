@@ -26,6 +26,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    acpi
 	home-manager
 	vim
 	kitty
