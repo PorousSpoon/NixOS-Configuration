@@ -55,8 +55,15 @@ environment.plasma6.excludePackages = with pkgs.kdePackages; [
     marble
     parley
     kate
+    ark
+    qrca
+    kwallet
+    kwalletmanager
+    okular
+    discover
  ];
  services.xserver.excludePackages = with pkgs; [
     xterm
+    kitty
   ];
 }
