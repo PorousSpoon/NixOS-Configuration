@@ -26,10 +26,9 @@
   };
 
   environment.systemPackages = with pkgs; [
-    acpi
 	home-manager
 	vim
-	kitty
+	terminator
 	git
 	librewolf
     openssh
@@ -39,21 +38,25 @@ system.stateVersion = "26.05";
 security.sudo.enable = true;
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 nixpkgs.config.allowUnfree = true;
-environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
 services.udev.extraRules = ''
 	SUBSYSTEM=="input", ATTRS{name}=="AT Translated Set 2 keyboard", ENV{LIBINPUT_IGNORE_DEVICE}="1"
 '';
 services.xserver.enable = true;
-services.xserver.windowManager.i3 = {
-	enable = true;
-	package = pkgs.i3;
-	extraPackages = with pkgs; [
-		dmenu
-        i3status-rust
-	];
-};
-services.displayManager.ly.enable = true;
-fonts.packages  = [
-  pkgs.jetbrains-mono
-];
+services.desktopManager.plasma6.enable = true;
+services.displayManager.sddm.enable = true;
+environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    konsole
+    kmail
+    khelpcenter
+    plasma-browser-integration
+    elisa
+    krdc
+    ktorrent
+    marble
+    parley
+    kate
+ ];
+ services.xserver.excludePackages = with pkgs; [
+    xterm
+  ];
 }
