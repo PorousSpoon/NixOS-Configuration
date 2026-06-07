@@ -4,6 +4,7 @@
     programs.vim = {
       enable = true;
       extraConfig = ''
+        set mouse=a
         colorscheme habamax
         set tabstop=4
         set shiftwidth=4
