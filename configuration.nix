@@ -26,9 +26,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    kitty
 	home-manager
 	vim
-	terminator
 	git
 	librewolf
     openssh
@@ -64,6 +64,5 @@ environment.plasma6.excludePackages = with pkgs.kdePackages; [
  ];
  services.xserver.excludePackages = with pkgs; [
     xterm
-    kitty
   ];
 }
