@@ -21,48 +21,29 @@
   services.libinput.enable = true;
 
   users.users.north = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
 
   environment.systemPackages = with pkgs; [
     kitty
-	home-manager
-	vim
-	git
-	librewolf
+    home-manager
+    vim
+    git
+    librewolf
     openssh
   ];
 
-system.stateVersion = "26.05"; 
-security.sudo.enable = true;
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
-nixpkgs.config.allowUnfree = true;
-services.udev.extraRules = ''
-	SUBSYSTEM=="input", ATTRS{name}=="AT Translated Set 2 keyboard", ENV{LIBINPUT_IGNORE_DEVICE}="1"
-'';
-services.xserver.enable = true;
-services.desktopManager.plasma6.enable = true;
-services.displayManager.sddm.enable = true;
-environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    konsole
-    kmail
-    khelpcenter
-    plasma-browser-integration
-    elisa
-    krdc
-    ktorrent
-    marble
-    parley
-    kate
-    ark
-    qrca
-    kwallet
-    kwalletmanager
-    okular
-    discover
- ];
- services.xserver.excludePackages = with pkgs; [
-    xterm
-  ];
+  system.stateVersion = "26.05"; 
+  security.sudo.enable = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+  services.udev.extraRules = ''
+    SUBSYSTEM=="input", ATTRS{name}=="AT Translated Set 2 keyboard", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+  '';
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+  services.displayManager.ly.enable = true;
 }
