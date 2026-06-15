@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./modules/programs/MANAGER.nix ];
-  home.username = "north";
-  home.homeDirectory = "/home/north";
-  home.stateVersion = "26.05";
+  imports = [ 
+    ./hmodules/programs/MANAGER.nix 
+    ./hmodules/home-manager-specifications.nix
+  ];
 }
