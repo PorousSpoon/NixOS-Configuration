@@ -7,6 +7,7 @@
       git
       librewolf
       openssh
+      emacs
     ];
     plasma6.excludePackages = with pkgs.kdePackages; [
       konsole
