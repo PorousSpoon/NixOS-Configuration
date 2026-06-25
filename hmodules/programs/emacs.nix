@@ -7,6 +7,7 @@
       extraPackages = epkgs: [
         epkgs.which-key
         epkgs.doom-themes
+        epkgs.vterm
       ];
       extraConfig = ''
         (setq inhibit-startup-screen t)
@@ -24,12 +25,20 @@
         (setq mouse-wheel-progressive-speed nil)
         (global-set-key (kbd "C-h f") 'describe-function)
         (global-set-key (kbd "C-h v") 'describe-variable)
+        (global-set-key (kbd "C-<return>") 'vterm)
         (show-paren-mode 1)
         (global-auto-revert-mode 1)
         (use-package which-key
           :config
           (which-key-mode 1))
+        (use-package vterm)
       '';
+    };
+    services.emacs = {
+      enable = true;
+      client.enable = true;
+      startWithUserSession = true;
+      package = pkgs.emacs30;
     };
   };
 }
