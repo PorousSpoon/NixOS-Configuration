@@ -23,15 +23,17 @@
         (tab-bar-mode 1)
         (setq scroll-conservatively 101)
         (setq mouse-wheel-progressive-speed nil)
+        ;; Keybinds:
         (global-set-key (kbd "C-h f") 'describe-function)
         (global-set-key (kbd "C-h v") 'describe-variable)
-        (global-set-key (kbd "C-<return>") 'vterm)
+        (global-set-key (kbd "C-S-<return>") 'vterm)
         (show-paren-mode 1)
         (global-auto-revert-mode 1)
         (use-package which-key
           :config
           (which-key-mode 1))
         (use-package vterm)
+        (setq tramp-default-method "sudo")
       '';
     };
     services.emacs = {
@@ -39,6 +41,7 @@
       client.enable = true;
       startWithUserSession = true;
       package = pkgs.emacs30;
+      socketActivation.enable = true;
     };
   };
 }
