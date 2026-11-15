@@ -1,0 +1,19 @@
+{lib, config, ...}: {
+  options.modThemes.enable = lib.mkEnableOption "Enables cycling between dark and light themes";
+  config = lib.mkIf config.modThemes.enable {
+    #!/usr/bin/env bash
+    STATE="$HOME/.local/state/ui-theme"
+      mkdir -p "$(dirname "$STATE")"
+      current=$(cat "$STATE" 2>/dev/null || echo dark)
+
+        if [[ "$current" == dark ]]; then
+          plasma-apply-colorscheme OttoLight   
+            plasma-apply-wallpaperimage "$HOME/pictures/tree-and-fence.jpg"
+            echo light > "$STATE"
+        else
+          plasma-apply-colorscheme Nothing
+            plasma-apply-wallpaperimage "$HOME/pictures/the-gentlemech.jpg"
+            echo dark > "$STATE"
+              fi
+  };
+}
