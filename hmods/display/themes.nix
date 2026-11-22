@@ -22,14 +22,14 @@ in
       cur=$(cat "$STATE" 2>/dev/null || echo dark)
       if [[ "$cur" == dark ]]; then
         lookandfeeltool -a Otto-Light
-        plasma-apply-wallpaperimage "/home/zulu/pictures/wallpapers/alligator-white.jpg" 2>/dev/null || true
+        plasma-apply-wallpaperimage "/home/zulu/pictures/wallpapers/abstract-white.jpg" 2>/dev/null || true
         printf 'include %s\n' "$LIGHT" > "$KITTY_RT"
         emacsclient -e "(load-theme 'doom-one-light t)" 2>/dev/null || true
         echo 'colorscheme default' > "$HOME/.vim/runtime-theme.vim"
         echo light > "$STATE"
       else
         lookandfeeltool -a Nothing
-        plasma-apply-wallpaperimage "/home/zulu/pictures/wallpapers/alligator-black.jpg" 2>/dev/null || true
+        plasma-apply-wallpaperimage "/home/zulu/pictures/wallpapers/abstract-black.jpg" 2>/dev/null || true
         printf 'include %s\n' "$DARK" > "$KITTY_RT"
         emacsclient -e "(load-theme 'doom-one t)" 2>/dev/null || true
         echo 'colorscheme habamax' > "$HOME/.vim/runtime-theme.vim"
@@ -55,14 +55,14 @@ in
 
       if kdialog --yesno "Use light theme (Otto-Light)?"$'\n'"No = dark (Nothing)"; then
         lookandfeeltool -a Otto-Light
-        plasma-apply-wallpaperimage "/home/zulu/pictures/wallpapers/alligator-white.jpg" 2>/dev/null || true
+        plasma-apply-wallpaperimage "/home/zulu/pictures/wallpapers/abstract-white.jpg" 2>/dev/null || true
         printf 'include %s\n' "$LIGHT" > "$KITTY_RT"
         emacsclient -e "(load-theme 'doom-one-light t)" 2>/dev/null || true
         echo 'colorscheme peachpuff' > "$HOME/.vim/runtime-theme.vim"
         echo light > "$STATE"
       else
         lookandfeeltool -a Nothing
-        plasma-apply-wallpaperimage "/home/zulu/pictures/wallpapers/alligator-black.jpg" 2>/dev/null || true
+        plasma-apply-wallpaperimage "/home/zulu/pictures/wallpapers/abstract-black.jpg" 2>/dev/null || true
         printf 'include %s\n' "$DARK" > "$KITTY_RT"
         emacsclient -e "(load-theme 'doom-one t)" 2>/dev/null || true
         echo 'colorscheme retrobox' > "$HOME/.vim/runtime-theme.vim"

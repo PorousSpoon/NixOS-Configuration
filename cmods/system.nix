@@ -9,6 +9,11 @@
     sudo.enable = true;
   };
 
+  services.openssh = {
+    passwordAuthentication = false;
+    permitRootLogin = "no";
+  };
+
   services.blueman.enable = true; # For bluetooth
 
   hardware = {

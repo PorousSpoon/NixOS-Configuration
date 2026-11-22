@@ -4,9 +4,13 @@
     ./development.nix
     ./virtualisation.nix
     ./portmaster.nix
+    ./ente-auth.nix
+    ./syncthing.nix
   ];
   modFlatpak.enable = true;
   modDevelopment.enable = true;
   modVirtualisation.enable = true;
   modPortmaster.enable = true;
+  modEnte-Auth.enable = true;
+  modSyncthing.enable = true;
 }
