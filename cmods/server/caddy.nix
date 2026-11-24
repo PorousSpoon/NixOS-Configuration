@@ -9,7 +9,7 @@
     environmentFile = config.sops.templates."caddy-env".path;
 
     virtualHosts."vaultwarden.home.microcloud.co.in".extraConfig = ''
-      @notlan not client_ip 192.168.0.0/24
+      @notlan not client_ip 192.168.1.0/24
       respond @notlan /admin 403
       reverse_proxy 127.0.0.1:8222
       tls {
@@ -48,7 +48,8 @@
   # Necessary for Nextcloud
   services.nginx.virtualHosts."cloud.home.microcloud.co.in".listen = [ { addr = "127.0.0.1"; port = 8080; } ];
 
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 53];
+  networking.firewall.allowedUDPPorts = [ 53 ];
 
   # sops
   sops = {

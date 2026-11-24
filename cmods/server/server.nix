@@ -6,6 +6,9 @@
     ./services/restic.nix
     ./services/nextcloud.nix
 
+    # Network
+    ./network/adguard-home.nix
+
     # Server
     ./storage.nix
     ./caddy.nix
