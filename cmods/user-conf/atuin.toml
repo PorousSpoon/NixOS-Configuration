@@ -1,0 +1,4 @@
+[output]
+enabled = true
+max_output_size = "1MB"
+max_disk_usage = "3%"

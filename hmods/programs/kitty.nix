@@ -1,10 +1,11 @@
-{ pkgs, lib, config, ... }: {
+{pkgs, lib, config, ...}: {
   options.modKitty.enable = lib.mkEnableOption "Enables kitty.nix module";
   config = lib.mkIf config.modKitty.enable {
     programs.kitty = {
       enable = true;
       font = {
-        name = "JetBrains Mono";
+        name = "JetBrainsMono Nerd Font";
+        package = pkgs.nerd-fonts.jetbrains-mono;
       };
       extraConfig = ''
             include runtime-theme.conf
@@ -14,7 +15,7 @@
             active_tab_foreground #eee
             active_tab_background #321bfc
             active_tab_font_style bold-italic
-        '';
+      '';
       keybindings = {
         "alt+1" = "goto_tab 1";
         "alt+2" = "goto_tab 2";
@@ -26,7 +27,10 @@
         "alt+8" = "goto_tab 8";
         "alt+9" = "goto_tab 9";
       };
-      settings.allow_remote_control = "yes";
+      settings = {
+        shell = "fish";
+        allow_remote_control = "yes";
+      };
     };
   };
 }

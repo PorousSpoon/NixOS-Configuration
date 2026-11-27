@@ -1,7 +1,7 @@
 {lib, config, ...}: {
   imports = [
-    ./services/dvorak.nix
-    ./services/keybindings.nix
+    ./user-conf/dvorak.nix
+    ./user-conf/keybindings.nix
   ];
   modDvorak.enable = true;
   modKeybindings.enable = true;

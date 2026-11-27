@@ -14,7 +14,7 @@
     ./cmods/secrets.nix
 
     # User services
-    ./cmods/services/manager.nix
+    ./cmods/user-conf/manager.nix
 
     # Server
     ./cmods/server/server.nix

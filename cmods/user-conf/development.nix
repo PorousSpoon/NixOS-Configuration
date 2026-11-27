@@ -18,6 +18,9 @@
       cargo
       gcc 
       rust-analyzer
+
+      # Nix
+      nixd
     ];
     programs.direnv = {
       enable = true;

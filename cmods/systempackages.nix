@@ -24,6 +24,7 @@ in {
         gocryptfs
         ripgrep
         syncthing
+        wireguard-tools
       ];
 
       # Excluded packages (bloatware that comes with KDE)
